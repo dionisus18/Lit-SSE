@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit App</title>
+    <script type="module" src="/src/my-list.js"></script>
+  </head>
+  <body>
+    <my-list id="list"></my-list>
+    <input id="input" type="text" />
+    <select>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <script>
+      class EventNew extends EventSource {
+        on(...args) {
+          super.addEventListener(...args);
+        }
+        connect() {
+          super.constructor(this.url);
+        }
+        constructor(url, options) {
+          this.url = url;
+          this.options = options;
+        }
+      }
+      const events = new EventNew("http://localhost:3011/events");
+
+      events.onmessage = (event) => {
+        const parsedData = JSON.parse(event.data);
+        console.log(event, parsedData);
+      };
+
+      events.on("event1", (evento) => {
+        console.log(evento);
+      });
+
+      events.connect();
+
+      let input = document.getElementById("list");
+    </script>
+  </body>
+</html>

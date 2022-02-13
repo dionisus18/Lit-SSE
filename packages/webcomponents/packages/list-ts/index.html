@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit App</title>
+    <script type="module" src="/src/my-element.ts"></script>
+
+    <script type="module" src="/src/my-events.ts"></script>
+  </head>
+  <body>
+    <my-element>
+      <p>This is child content</p>
+    </my-element>
+    <script type="module">
+      // import * as sseio from 'sse.io-client'
+      // const client = sseio.client('http://localhost:3011/events', [
+      //   'event1',
+      //   'message',
+      // ])
+
+      // client.on('event1', (data) => {
+      //   console.log(data)
+      // })
+
+      // client.on('message', (data) => {
+      //   console.log(data)
+      // })
+
+      // client.start()
+    </script>
+    <!-- <script type="module" src="./src/main.ts"></script> -->
+  </body>
+</html>
