@@ -15,6 +15,7 @@
   "dependencies": {
     "@material/mwc-button": "^0.25.3",
     "@webcomponents/webcomponentsjs": "^2.6.0",
+    "btn": "link:",
     "lit": "^2.0.2"
   },
   "devDependencies": {

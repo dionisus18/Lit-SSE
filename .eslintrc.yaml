@@ -7,7 +7,7 @@ extends:
 parserOptions:
   parser: "babel-eslint"
 rules:
-  - "prettier/prettier":
-      - "error":
-        singleQuote: true
-        semi: false
+  "prettier/prettier":
+    - "error":
+      singleQuote: true
+      semi: false
